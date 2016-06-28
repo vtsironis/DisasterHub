@@ -1,0 +1,23 @@
+<ion-view  view-title="{{event.hazard_alias}} {{event.id}}">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-map"
+            ng-click="viewBaseLayers($event)"></button>
+    <button class="button button-icon button-clear ion-social-buffer"
+            ng-click="viewOverlayLayers($event)"></button>
+    <button class="button button-icon button-clear ion-android-more-vertical"
+            ng-click="viewMoreOptions($event)"></button>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+    <div id="olMap" class="ol-map"></div>
+  </ion-content>
+  <!--<ion-footer-bar class="bar-transparent">
+    <div class="button-bar">
+      <a class="button button-balanced" ng-click="viewInformation()">View information</a>
+    </div>
+  </ion-footer-bar>-->
+  <ion-footer-bar class="bar-balanced">
+    <div class="button-bar">
+      <a class="button button-icon button-clear ion-ios-information-outline" ng-click="viewInformation()">View event's information</a>
+    </div>
+  </ion-footer-bar>
+</ion-view>

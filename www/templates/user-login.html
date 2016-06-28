@@ -1,0 +1,40 @@
+<ion-view view-title="Sign in">
+  <div class="bar bar-header bar-positive">
+    <h1 class="title">DisasterHub</h1>
+  </div>
+  <ion-content class="padding has-header">
+    <div class="row responsive-sm">
+      <div class="col text-center">
+        <img src="img/logo.png" class="app-logo">
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col text-center">
+        <div class="list list-inset list-login">
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon"></i>
+            <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+            <i class="icon ion-lock-combination placeholder-icon"></i>
+            <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col text-center">
+        <button class="button button-block button-login button-positive icon-left ion-log-in" ng-click="login()">
+          Sign in
+        </button>
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col text-center">
+        <a width="150" height="50" href="#" onclick="window.open('https://auth0.com/', '_system', 'location=yes'); return false;" alt="Single Sign On & Token Based Authentication - Auth0">
+          <img width="150" height="50" alt="JWT Auth for open source projects" src="img/badges/a0-badge-dark.png"/>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Information</h1>
+    <div class="buttons">
+      <button class="button button-clear button-icon ion-ios-close" ng-click="hideInformation()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+	<ion-list>
+	  <ion-item class="item-divider" ng-repeat="(section, lines) in event.information">
+	  	<b>{{section | title}} Information</b>
+	  	<ion-item class="item-icon-right" ng-repeat="line in lines">
+	  	  <i class="icon {{line.icon}} positive" ng-if="line.icon"></i>
+	  	  {{line.key | title}}: {{line.val}}
+	  	</ion-item>
+	  </ion-item>
+	</ion-list>
+  </ion-content>
+</ion-modal-view>

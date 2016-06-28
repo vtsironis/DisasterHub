@@ -1,0 +1,22 @@
+{
+  "name": "DisasterHub",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/geoserver",
+      "proxyUrl": "http://195.251.203.238:8080/geoserver"
+    },
+    {
+      "path": "/noaserver",
+      "proxyUrl": "http://disasterhub.space.noa.gr"
+    },
+    {
+      "path": "/seviri",
+      "proxyUrl": "http://195.251.203.238/seviri"
+    },
+    {
+      "path": "/ktimatologio",
+      "proxyUrl": "http://gis.ktimanet.gr"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item class="item-icon-left" href="#" menu-close>
+          <i class="icon ion-archive"></i>
+          All
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/eo/all" menu-close>
+          <i class="icon ion-satellite"></i>
+          Earth Observations
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/crowd/all" menu-close>
+          <i class="icon ion-crowd"></i>
+          Croudsourcing
+        </ion-item>
+        <ion-item class="item-divider">
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/all/earthquake" menu-close>
+          <i class="icon ion-earthquake"></i>
+          Earthquakes
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/all/flood" menu-close>
+          <i class="icon ion-flood"></i>
+          Floods
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/all/wildfire" menu-close>
+          <i class="icon ion-wildfire"></i>
+          Forest Fires
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/all/heatwave" menu-close>
+          <i class="icon ion-heatwave"></i>
+          Heat Waves
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/events/all/smoke" menu-close>
+          <i class="icon ion-smoke"></i>
+          Smoke Plumes
+        </ion-item>
+        <ion-item class="item-divider">
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/app/about" menu-close>
+          <i class="icon ion-ios-information-outline"></i>
+          About DisasterHub
+        </ion-item>
+        <ion-item class="item-icon-left" href="#/user/logout">
+          <i class="icon ion-log-out"></i>
+          Sign out
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

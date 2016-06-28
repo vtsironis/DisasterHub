@@ -1,0 +1,15 @@
+<ion-popover-view>
+  <ion-header-bar>
+  	<h1 class="title">Maps</h1>
+  </ion-header-bar>
+  <ion-content>
+  	  <ion-radio ng-repeat="(id, background) in layers.backgrounds"
+                 ng-if="id!='active'"
+                 ng-change="toggleBackground()"
+                 ng-model="$parent.layers.backgrounds.active"
+                 ng-value="id"
+                 name="backgrounds">
+  	  	{{background.get('title')}}
+  	  </ion-radio>
+  </ion-content>
+</ion-popover-view>

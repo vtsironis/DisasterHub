@@ -1,0 +1,195 @@
+/* Empty. Add your own CSS if you like */
+
+
+@keyframes pulse {
+  0%{transform:scale(.1);opacity: 0;}
+  50%{ opacity: .4;}
+  100%{transform: scale(1.6); opacity: 0;}
+}
+
+.app-logo {
+  background-position:center;
+  background-repeat:no-repeat;
+  max-width: 150px;
+}
+
+.list-login {
+  margin-top: 0px;
+}
+
+.list-login .item:not(:first-child) {
+  margin-top: 20px;
+}
+
+.list-register {
+  margin-top: 0px;
+}
+
+.list-register .item:not(:first-child) {
+  margin-top: 10px;
+}
+
+.modal-textarea {
+  font-size: 18px;
+  min-height: 24px;
+  line-height: 21px;
+  max-height: 128px;
+  padding-bottom: 15px;
+  resize: none; 
+  width: 100%;
+}
+
+.modal-textarea-counter {
+  bottom: 40px;
+  position: absolute;
+  right: 30px;
+}
+
+.ol-geoloc-marker {
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.ol-geoloc-marker > div {
+  background-color: #387ef5;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.ol-geoloc-marker > div:nth-child(1){
+  animation: pulse 2s infinite;
+}
+
+.ol-geoloc-marker > div:nth-child(2){
+  animation: pulse 2s infinite .3s;
+}
+
+.ol-geoloc-marker > div:nth-child(3){
+  animation: pulse 2s infinite .6s;
+}
+
+.ol-geoloc-marker > div:nth-child(4){
+  text-align: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #22475E;
+  font-size: 1px;
+  /*line-height: 80px;*/
+  width: 8px;
+  height: 8px;
+}
+
+.ol-geotag-marker {
+  font-size: 46px;
+  position: absolute;
+}
+
+.ol-map {
+  display: block;
+  height: 100%;
+  /*margin: 0;
+  padding: 0;*/
+  position: fixed;
+  width: 100%;
+}
+
+.heatwave {
+  color: rgb(253, 184, 19);
+}
+
+.wildfire {
+  color: rgb(226, 88, 34);
+}
+
+.flood {
+  color: rgb(0, 112, 192);
+}
+
+.earthquake {
+  color: rgb(102, 51, 0);
+}
+
+.smoke {
+  color: rgb(112, 134, 140);
+}
+
+.bar-transparent.bar{
+  background-color: transparent !important;
+}
+
+.bar-transparent.bar-footer{
+  background-image: none !important;
+}
+
+h1 > i {
+  font-size: 32px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+h2 > i {
+  font-size: 32px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.right-buttons > .button {
+  padding-right: 10px !important;
+}
+
+
+
+.blink {
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    animation: blink .75s linear infinite;
+}
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}

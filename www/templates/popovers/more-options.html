@@ -1,0 +1,14 @@
+<ion-popover-view>
+  <ion-header-bar>
+    <h1 class="title">More options</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-checkbox ng-repeat="(id, overlay) in layers.overlays.hidden"
+              ng-click="toggleHiddenOverlay(id)"
+              ng-checked="overlay.getVisible() && id!=='geotags'">
+        {{overlay.get('title')}}
+      </ion-checkbox>
+    </ion-list>
+  </ion-content>
+</ion-popover-view>

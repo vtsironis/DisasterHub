@@ -1,0 +1,37 @@
+<ion-view view-title="Post to DisasterHub">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-thumbnail-left">
+        <img src="img/location.svg">
+        <span class="item-note">{{geotag.abstract.date | date:'d MMM HH:mm'}}</span>
+        <h2>{{geotag.abstract.header}}</h2>
+        <p ng-repeat="paragraph in geotag.abstract.paragraphs">{{paragraph}}</p>
+        <!--<a class="button button-icon ion-ios-paper-outline icon-left positive ion-subdued" ng-if="geotag.info">Text Info</a>
+        <a class="button button-icon ion-image icon-left positive ion-subdued" ng-if="geotag.photoURI">Photo</a>-->
+      </ion-item>
+      <ion-item class="item-divider">
+      </ion-item>
+      <ion-item class="item-icon-left" ng-click="addInfo()">
+        <i class="icon ion-compose balanced"></i>
+        Add short info
+      </ion-item>
+      <ion-item class="item-icon-left" ng-click="addPhoto()">
+        <i class="icon ion-camera calm"></i>
+        Add a photo
+      </ion-item>
+      <!--<ion-item class="item-icon-left" ng-click="addEmergency()">
+        <i class="icon ion-android-alert assertive"></i>
+        Add an emergency alert
+      </ion-item>
+      <ion-item class="item-icon-left" ng-click="shareGeotag()">
+        <i class="icon ion-share energized"></i>
+        Share with social media
+      </ion-item>-->
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar class="bar-positive">
+    <div class="button-bar">
+      <a class="button button-icon button-clear ion-paper-airplane" ng-click="postGeotag()">Post Geotag</a>
+    </div>
+  </ion-footer-bar>
+</ion-view>

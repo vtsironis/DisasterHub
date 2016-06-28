@@ -1,0 +1,38 @@
+<ion-view view-title="Add geotag">
+  <ion-floating-button
+      button-color="#387ef5"
+      click="getGeolocation()"
+      has-footer="true"
+      icon="ion-android-locate"
+      icon-color="#fff">
+  </ion-floating-button>
+  <ion-nav-buttons side="right">
+    <button class="button
+                   button-icon
+                   button-clear ion-map"
+            ng-click="openPopover('backgrounds', $event)"></button>
+    <button class="button
+                   button-icon
+                   button-clear ion-social-buffer"
+            ng-click="openPopover('overlays', $event)"></button>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+    <div id="olMap" class="ol-map"></div>
+    <div id="olGeolocMarker" class="ol-geoloc-marker">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>.</div>
+    </div>
+    <i  id="olGeotagMarker" class="assertive icon ion-location ol-geotag-marker"></i>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-light padding">
+    <h1 class="title">
+      <i class="icon ion-location assertive"></i>
+      <span class="h4">{{(coordinates.hdms) ? coordinates.hdms : ucoordinates.hdms}}</span>
+    </h1>
+    <div class="buttons" ng-click="selectHazard()">
+      <button class="button button-clear button-positive button-icon ion-checkmark-round"></button>
+    </div>
+  </ion-footer-bar>
+</ion-view>

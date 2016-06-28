@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Add short info</h1>
+    <div class="buttons">
+      <button class="button button-clear button-icon ion-ios-close" ng-click="hideInfo()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+  	<textarea class="modal-textarea"
+              maxlength="500"
+              ng-model="geotag.info.content"
+              ng-trim="true"
+              placeholder="Write your message..." msd-elastic></textarea>
+  </ion-content>
+  <p class="modal-textarea-counter">{{500 - geotag.info.content.length}} characters left</p>
+  <ion-footer-bar class="bar-light">
+  	<div class="button-bar">
+  	  <a class="button" ng-click="hideInfo()">Cancel</a>
+  	  <a class="button button-positive" ng-click="hideInfo()">OK</a>
+  	</div>
+  </ion-footer-bar>
+</ion-modal-view>

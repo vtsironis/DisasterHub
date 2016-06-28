@@ -1,0 +1,25 @@
+<ion-view view-title="{{eventsViewTitle}}">
+  <ion-floating-button
+		button-color="#387ef5"
+        click="addGeotag()"
+        has-footer="false"
+        icon="ion-geotag"
+        icon-color="#fff">
+  </ion-floating-button>
+  <ion-content>
+    <ion-refresher on-refresh="refreshEvents()" pulling-text="Refreshing..."></ion-refresher>
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-repeat="event in events | filter: filterEvents" href="#/app/event/{{event.id}}">
+        <img ng-src="img/{{event.hazard}}.png">
+        <span class="item-note">{{event.abstract.date | eventDateFormatter}}</span>
+        <h2>
+          <i class="icon {{event.abstract.header.icon}} positive"></i>
+          {{event.abstract.header.text}}
+        </h2>
+        <p ng-repeat="paragraph in event.abstract.paragraphs">{{paragraph}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if="moreEventsCanBeLoaded" on-infinite="loadEvents()" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

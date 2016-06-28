@@ -1,0 +1,15 @@
+<ion-popover-view>
+  <ion-header-bar>
+  	<h1 class="title">Overlays</h1>
+  </ion-header-bar>
+  <ion-content>
+  	<ion-list>
+  	  <ion-checkbox ng-repeat="(id, overlay) in layers.overlays"
+  	  				ng-if="id!='hidden'"
+  	  				ng-click="toggleOverlay(id)"
+  	  				ng-checked="overlay.getVisible()">
+  	  	{{overlay.get('title')}}
+  	  </ion-checkbox>
+    </ion-list>
+  </ion-content>
+</ion-popover-view>
