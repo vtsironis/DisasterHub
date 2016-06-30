@@ -439,22 +439,20 @@ angular.module('dHb.controllers', [])
   view.on('propertychange', function(event) {
 
     if (map.getView().getCenter() === $scope.ucoordinates[3857]) {
-      $scope.coordinates = {};
-
+      // Make getoag overlay invisible if it is already visible.
       map.getOverlayById('geotagmarker').setPosition(undefined);
 
     } else {
+      // Assign geotag marker position to the center of the map view.
       var coords = map.getView().getCenter();
-
-      //$scope.coordinates[3857] = coords;
-      //$scope.coordinates[4326] = ol.proj.transform(coords, 'EPSG:3857', 'EPSG:4326');
-
+      // The geotag coordinates in various projections.
       $scope.coordinates = {
         3857: coords,
         4326: ol.proj.transform(coords, 'EPSG:3857', 'EPSG:4326'),
         hdms: ol.coordinate.toStringHDMS(ol.proj.transform(coords, 'EPSG:3857', 'EPSG:4326'))
       };
-
+      // Make visible the geotag overlay in the position specifie
+      // by the coordinates of the center of the map view.
       map.getOverlayById('geotagmarker').setPosition($scope.coordinates[3857]);
     }
 
@@ -974,13 +972,11 @@ angular.module('dHb.controllers', [])
           sensing_last: $scope.event.sensing_last,
           id: $scope.event.id
         }).then(function(geometry) {
-          //console.log('Extent geometry: ', geometry);
           var hrsat = $scope.layers.overlays.hidden.hrsat;
           var start_date = new Date($scope.event.sensing_start);
           start_date.setHours(start_date.getHours() - 12);
           var stop_date = new Date($scope.event.sensing_last);
           stop_date.setHours(stop_date.getHours() + 12);
-          //console.log(start_date, stop_date);
 
           hrsat.getSource().updateParams({
             CQL_FILTER: 'DWITHIN(geom_mask,' + geometry + ',10000,meters)',
@@ -989,9 +985,6 @@ angular.module('dHb.controllers', [])
                         "';end_date:'" +
                         $filter('date')(stop_date, 'yyyy-MM-ddTHH:mm:ss') + "'"
           });
-
-          //console.log(hrsat.getSource().getUrl());
-          //console.log(hrsat.getSource().getParams());
 
           hrsat.setVisible(false);
 
@@ -1029,7 +1022,6 @@ angular.module('dHb.controllers', [])
           sensing_last: $scope.event.sensing_last,
           id: $scope.event.id
         }).then(function(geometry) {
-          //console.log('Extent geometry: ', geometry);
 
           angular.forEach($scope.layers.overlays.hidden, function(layer, id) {
 
@@ -1186,6 +1178,12 @@ angular.module('dHb.controllers', [])
   };
 
   $scope.selectHazard = function() {
+    if (angular.isUndefined($scope.coordinates[3857])) {
+      alert('You have not provided a location in the map for the geotag. Please move or zoom the map to the location that you want to place the geotagging marker and then indicate the hazard.');
+
+      return;
+    }
+
     // Show the action sheet
     $ionicActionSheet.show({
       buttons: [
@@ -1249,10 +1247,8 @@ angular.module('dHb.controllers', [])
     return {
       date: new Date(),
       header: hazards[parseInt(params.hazardId)],
-      //paragraphs: [ol.coordinate.format(($scope.coordinates[4326] ? $scope.coordinates[4326] : $scope.ucoordinates[4326]), 'Location: {y}, {x}', 2),
-      //             ol.coordinate.format($scope.ucoordinates[4326], 'User Location: {y}, {x}', 2)]
-      paragraphs: ['Location: ' + ($scope.coordinates.hdms ? $scope.coordinates.hdms : $scope.ucoordinates.hdms),
-                   'User Location: ' + $scope.ucoordinates.hdms]
+      paragraphs: ['Location: ' + $scope.coordinates.hdms,
+                   'User Location: ' + ($scope.ucoordinates.hdms ? $scope.ucoordinates.hdms : 'Unknown')]
     };
 
   }($stateParams);
