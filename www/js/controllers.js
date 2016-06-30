@@ -439,6 +439,7 @@ angular.module('dHb.controllers', [])
   view.on('propertychange', function(event) {
 
     if (map.getView().getCenter() === $scope.ucoordinates[3857]) {
+	  $scope.coordinates = $scope.ucoordinates;
       // Make getoag overlay invisible if it is already visible.
       map.getOverlayById('geotagmarker').setPosition(undefined);
 
