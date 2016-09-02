@@ -66,7 +66,7 @@ Build DisasterHub in your PC:
 
 <pre>$ ionic build</pre>
 
-In the case of the Android platform an APK file named <i>android-armv7-debug.apk</i> will be created under the folder $PATH_TO_DISASTERHUB/DisasterHub/platforms/android/build/outputs/apk. You can use this file to install the DisasterHub app in your android device.
+In the case of the Android platform an APK file (e.g. <i>android-armv7-debug.apk</i>) will be created under the folder $PATH_TO_DISASTERHUB/DisasterHub/platforms/android/build/outputs/apk. You can use this file to install the DisasterHub app in your android device.
 
 <strong>Option 2</strong>
 
